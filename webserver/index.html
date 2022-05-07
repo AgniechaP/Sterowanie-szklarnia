@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<!-- AWP_In_Variable Name='"Nasłonecznienie"' -->
+<!-- AWP_In_Variable Name='"CO2"' -->
+<!-- AWP_In_Variable Name='"Hum_1"' -->
+<!-- AWP_In_Variable Name='"Hum_2"' -->
+<!-- AWP_In_Variable Name='"Hum_3"' -->
+<!-- AWP_In_Variable Name='"Hum_4"' -->
+<!-- AWP_In_Variable Name='"Hum_5"' -->
+<!-- AWP_In_Variable Name='"Temperatura"' -->
+<head> 
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> 
+<script type="text/javascript">
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer", { 
+		title: {
+			text: "Dane środowiskowe-wilgotność"
+		},
+		axisY:{
+  		title: "Wilgotność [%]",
+ 		},
+		 axisX:{
+  		title: "Dni",
+ 		},
+		data: [
+		{
+			type: "spline",
+			showInLegend: true, 
+        	name: "strefa1",
+        	legendText: "Strefa 1",
+			dataPoints: [
+				{ y: Hum_1[0],x:-6 },
+				{ y: Hum_1[1] ,x:-5},
+				{ y: Hum_1[2] ,x:-4},
+				{ y: Hum_1[3] , x:-3},
+				{ y: Hum_1[4] ,x:-2},
+				{ y: Hum_1[5] ,x:-1},
+				{ y: Hum_1[6] ,x: 0}	
+			]
+		},
+		{
+		type: "spline",
+		showInLegend: true, 
+        name: "strefa2",
+        legendText: "Strefa 2",
+			dataPoints: [
+			{ y: Hum_2[0],x:-6 },
+			{ y: Hum_2[1] ,x:-5},
+			{ y: Hum_2[2] ,x:-4},
+			{ y: Hum_2[3] , x:-3},
+			{ y: Hum_2[4] ,x:-2},
+			{ y: Hum_2[5] ,x:-1},
+			{ y: Hum_2[6] ,x: 0}		
+			]
+		},
+		{
+		type: "spline",
+		showInLegend: true, 
+        name: "strefa3",
+        legendText: "Strefa 3",
+			dataPoints: [
+			{ y: Hum_3[0],x:-6 },
+			{ y: Hum_3[1] ,x:-5},
+			{ y: Hum_3[2] ,x:-4},
+			{ y: Hum_3[3] , x:-3},
+			{ y: Hum_3[4] ,x:-2},
+			{ y: Hum_3[5] ,x:-1},
+			{ y: Hum_3[6] ,x: 0}	
+			]
+		},
+		{
+		type: "spline",
+		showInLegend: true, 
+        name: "strefa4",
+        legendText: "Strefa 4",
+			dataPoints: [
+			{ y: Hum_4[0],x:-6 },
+			{ y: Hum_4[1] ,x:-5},
+			{ y: Hum_4[2] ,x:-4},
+			{ y: Hum_4[3] , x:-3},
+			{ y: Hum_4[4] ,x:-2},
+			{ y: Hum_4[5] ,x:-1},
+			{ y: Hum_4[6] ,x: 0}	
+			]
+		},
+		{
+		type: "spline",
+		showInLegend: true, 
+        name: "strefa5",
+        legendText: "Strefa 5",
+			dataPoints: [
+			{ y: Hum_5[0],x:-6 },
+			{ y: Hum_5[1] ,x:-5},
+			{ y: Hum_5[2] ,x:-4},
+			{ y: Hum_5[3] , x:-3},
+			{ y: Hum_5[4] ,x:-2},
+			{ y: Hum_5[5] ,x:-1},
+			{ y: Hum_5[6] ,x: 0}	
+			]
+		}
+		]
+	});
+
+	var chart2 = new CanvasJS.Chart("chartContainer2", { 
+		title: {
+			text: "Dane środowiskowe- C02"
+		},
+		axisY:{
+  		title: "CO2 [ppm]",
+ 		},
+		 axisX:{
+  		title: "Dni",
+ 		},
+		data: [
+		{
+			type: "spline",
+			dataPoints: [
+			{ y: CO2[0] ,x:-6 },
+			{ y: CO2[1]  ,x:-5},
+			{ y: CO2[2]  ,x:-4},
+			{ y: CO2[3], x:-3},
+			{ y: CO2[4],x:-2},
+			{ y: CO2[5],x:-1},
+			{ y: CO2[6],x: 0}	
+			]
+		}
+
+		]
+	});
+
+	var chart3 = new CanvasJS.Chart("chartContainer3", { 
+		title: {
+			text: "Dane środowiskowe-nasłonecznienie"
+		},
+		axisY:{
+  		title: "Nasłonecznienie [%]",
+ 		},
+		 axisX:{
+  		title: "Dni",
+ 		},
+		data: [
+		{
+			type: "spline",
+			dataPoints: [
+			{ y: Naslonecznienie[0] ,x:-6 },
+			{ y: Naslonecznienie[1] ,x:-5},
+			{ y: Naslonecznienie[2] ,x:-4},
+			{ y: Naslonecznienie[3], x:-3},
+			{ y: Naslonecznienie[4],x:-2},
+			{ y: Naslonecznienie[5],x:-1},
+			{ y: Naslonecznienie[6],x: 0}	
+			]
+		}
+		]
+	});
+
+	var chart4 = new CanvasJS.Chart("chartContainer3", { 
+		title: {
+			text: "Dane środowiskowe-temperatura"
+		},
+		axisY:{
+  		title: "Temperatura [C]",
+ 		},
+		 axisX:{
+  		title: "Dni",
+ 		},
+		data: [
+		{
+			type: "spline",
+			dataPoints: [
+			{ y: Temperatura[0] ,x:-6 },
+			{ y: Temperatura[1] ,x:-5},
+			{ y: Temperatura[2] ,x:-4},
+			{ y: Temperatura[3], x:-3},
+			{ y: Temperatura[4],x:-2},
+			{ y: Temperatura[5],x:-1},
+			{ y: Temperatura[6],x: 0}	
+			]
+		}
+		]
+	});
+
+
+
+	chart.render();	
+	chart2.render();	
+	chart3.render();
+	chart4.render();
+
+
+	$("#updateDataPoint").click(function () {
+
+	var length = chart.options.data[0].dataPoints.length;
+	chart.options.title.text = "Last DataPoint Updated";
+	chart.options.data[0].dataPoints[length-1].y = 15 - Math.random() * 10;
+	chart.render();
+
+	});
+}
+</script>
+</head>  
+<body>  
+<div id="chartContainer" style="width:100%; height:280px"></div>  
+<div id="chartContainer2" style="width:100%; height:280px"></div>  
+<div id="chartContainer3" style="width:100%; height:280px"></div>  
+<div id="chartContainer4" style="width:100%; height:280px"></div>  
+<button id="addDataPoint">Add Data Point</button>  
+<button id="updateDataPoint">Update Data Point</button>  
+</body>
+</html>
